@@ -5,15 +5,14 @@ import org.junit.Test;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,6 +23,7 @@ import java.io.OutputStream;
 public class FlyingSaucerPOCTest {
 
     @Test
+
     public void simpleXml2PDFTest() throws IOException, DocumentException, TransformerException {
 
         //
@@ -35,7 +35,7 @@ public class FlyingSaucerPOCTest {
         // apply XSLT
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer(new StreamSource(inputXSLFilename));
-        transformer.transform(new StreamSource(inputXMLFilename),new StreamResult(new FileOutputStream(outputHTMLFilename)));
+        transformer.transform(new StreamSource(inputXMLFilename), new StreamResult(new FileOutputStream(outputHTMLFilename)));
 
         // transform result to PDF
         OutputStream pdfOutputStream = new FileOutputStream(outputPDFFilename);
