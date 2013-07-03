@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="fiche-circu" type="fiche-circuType"/>
+  <xs:complexType name="commentairesType">
+    <xs:sequence>
+      <xs:element type="commentaireType" name="commentaire" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historyType">
+    <xs:sequence>
+      <xs:element name="username">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Georges Paris"/>
+            <xs:enumeration value="georges@paris.fr"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2013-07-02T16:19:48+02:00"/>
+            <xs:enumeration value="2013-07-02T16:20:59+02:00"/>
+            <xs:enumeration value="2013-07-02T16:21:55.537+02:00"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="transition">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="prepare"/>
+            <xs:enumeration value="sendForVisa"/>
+            <xs:enumeration value="Relaunch"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="etat">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ReadyToPrepare"/>
+            <xs:enumeration value="ReadyToSendForVisa"/>
+            <xs:enumeration value="Relaunch"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="entryType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fiche-circuType">
+    <xs:sequence>
+      <xs:element type="historyEntryType" name="historyEntry"/>
+      <xs:element type="commentairesType" name="commentaires"/>
+      <xs:element type="annexesType" name="annexes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="annexeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="action" use="optional"/>
+        <xs:attribute type="xs:string" name="noderefid" use="optional"/>
+        <xs:attribute type="xs:string" name="utilisateur" use="optional"/>
+        <xs:attribute type="xs:string" name="date" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="commentaireType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="auteur" use="optional"/>
+        <xs:attribute type="xs:string" name="date" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="historyEntryType">
+    <xs:sequence>
+      <xs:element type="historyType" name="history" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="annexesType">
+    <xs:sequence>
+      <xs:element type="annexeType" name="annexe" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

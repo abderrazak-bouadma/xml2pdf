@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="fiche.xsl"?>
+<fiche-circu>
+    <document>document.filename</document>
+    <historyEntry>
+        <history>
+            <username>Georges Paris</username>
+            <date>2013-07-02T16:19:48+02:00</date>
+            <transition>prepare</transition>
+            <etat>ReadyToPrepare</etat>
+            <email>georges@paris.fr</email>
+            <entryType>WORKFLOW</entryType>
+        </history>
+        <history>
+            <username>Georges Paris</username>
+            <date>2013-07-02T16:20:59+02:00</date>
+            <transition>sendForVisa</transition>
+            <etat>ReadyToSendForVisa</etat>
+            <email>georges@paris.fr</email>
+            <entryType>WORKFLOW</entryType>
+        </history>
+        <history>
+            <username>georges@paris.fr</username>
+            <date>2013-07-02T16:21:55.537+02:00</date>
+            <transition>Relaunch</transition>
+            <etat>Relaunch</etat>
+            <email>georges@paris.fr</email>
+            <entryType>WORKFLOW</entryType>
+        </history>
+    </historyEntry>
+    <commentaires>
+        <commentaire auteur="georges@paris.fr" date="2013-07-02T16:20:17+02:00">OUahouh ! Ceci est un super commentaire
+            !
+        </commentaire>
+        <commentaire auteur="georges@paris.fr" date="2013-07-02T16:21:40.652+02:00">this pdf is full of bullshit, do it
+            again !
+        </commentaire>
+        <commentaire auteur="charles.du-boulay@cdcfast.fr" date="2013-07-02T16:29:05.712+02:00">c'est mieux
+        </commentaire>
+    </commentaires>
+    <annexes>
+        <annexe action="AJOUT" noderefid="7f68e16d-00d5-4e3e-9b7d-a24f9b4d7ce2" utilisateur="georges@paris.fr"
+                date="2013-07-02T16:20:40.614+02:00">Annuaire CDC Fast 04.06.2013.pdf
+        </annexe>
+        <annexe action="AJOUT" noderefid="75b68721-75d1-4ed8-aec7-0ec78b062906" utilisateur="georges@paris.fr"
+                date="2013-07-02T16:20:54.410+02:00">fast_pj.jpg
+        </annexe>
+    </annexes>
+</fiche-circu>
