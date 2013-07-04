@@ -1,4 +1,5 @@
 table td span {
     color: limegreen;
     font-weight: bold;
+    border: black solid thin;
 }
